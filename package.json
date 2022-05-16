@@ -1,7 +1,10 @@
 {
+  "predeploy": "npm run build",
+"deploy": "gh-pages -d build",
   "name": "appmiramar",
-  "version": "0.1.0",
+  "version": "0.1.0 ALPHA",
   "private": true,
+  "homepage": "https://miramar2022.github.io/appmiramar/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
