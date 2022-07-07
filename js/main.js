@@ -19,7 +19,7 @@ let pdfDoc = null,
   pageIsRendering = false,
   pageNumIsPending = null;
 
-var scale = 0.5,
+var scale = 0.75,
   canvas = document.querySelector('#pdf-render'),
   ctx = canvas.getContext('2d');
 
