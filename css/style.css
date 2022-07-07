@@ -45,7 +45,6 @@ body{
   background-color: #333;
   overflow: hidden;
   height: fit-content;
-  position:fixed;
   top: 0;
   width: 100%;
 }
