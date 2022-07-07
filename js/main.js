@@ -296,11 +296,10 @@ function pdfmisc(){
 }
 function pdfmob(){
   var selection = document.getElementById("selector1").value;
-  var doc1 = document.getElementById('render1');
-
   switch(selection){
     case "def":
-      mainshow()
+      doc1.hidden = true
+      main.hidden = false
       break
     case "1":
       pdf1()
