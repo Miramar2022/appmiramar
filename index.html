@@ -14,7 +14,7 @@
     <title id="title">Miramar 2022</title>
   </head>
   <body>
-    <div class="top-bar">
+    <div class="top-bar" id="tbdesk">
       <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
       <div id="avisos">
         <button class="boton" onclick="pdf1()">Horario General</button>
@@ -24,10 +24,13 @@
         <button class="boton" onclick="miscshow()">Anuncios varios</button>
       </div>
     </div>
+    <div class="top-bar" id="tbmob" hidden>
+      <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
+    </div>
     <div class="body" id="mainpage">
       <h1>Bienvenido a la app para los avisos de la conferencia</h1>
       <div>
-        <img src="img/4.png">
+        <img src="img/4.png" width="88%">
       </div>
       <br>    
     </div>
@@ -37,6 +40,21 @@
         <option value="def">seleccionar</option>
         <option value="1">1</option>
         <option value="2">2</option>
+      </select>
+    </div>
+    <div class="body" id="mobmain" hidden>
+      <h1>Bienvenido a la app para los avisos de la conferencia</h1>
+      <div>
+        <img src="img/4.png" width="88%">
+      </div>
+      <h1>Seleccione el aviso a mostrar</h1>
+      <select onchange="pdfmob()" id="selector">
+        <option value="def">ninguno</option>
+        <option value="1">Horario General</option>
+        <option value="2">Horario Niños y Adolescentes</option>
+        <option value="3">Objetos perdidos</option>
+        <option value="4">FAQ</option>
+        <option value="5">Avisos varios</option>
       </select>
     </div>
     <!--No hay un uso practico en tener ambas divs pero si remuevo una se rompe el codigo-->
