@@ -1,5 +1,9 @@
-const url1 = 'docs/pdf.pdf';
-const url2 = 'docs/F1008B Examen conocimientos.pdf';
+const url1 = 'docs/Horario General.pdf';
+const url2 = 'docs/Horario Act Niños y Adolescentes.pdf';
+const url3 = 'docs/Listado de Objetos perdidos.pdf';
+const url4 = 'docs/Preguntas Frecuentes - Miramar 2022.pdf'
+const url5 = 'docs/pdf.pdf';
+const url6 = 'docs/F1008B Examen conocimientos.pdf'
 
 var url;
 
@@ -85,12 +89,14 @@ function pdf1(){
   var doc1 = document.getElementById('render1');
   var avisos = document.getElementById('avisos');
   var pdfbuttons = document.getElementById('pdfbuttons');
+  var misc = document.getElementById('misc');
+  misc.hidden = true;
 
   
   main.hidden = true;
-  avisos.hidden = true;
+  avisos.hidden = false;
   doc1.hidden = false;
-  pdfbuttons.hidden = false;
+  pdfbuttons.hidden = true;
 
   url = url1;
   
@@ -124,12 +130,14 @@ function pdf2(){
   var doc1 = document.getElementById('render1');
   var avisos = document.getElementById('avisos');
   var pdfbuttons = document.getElementById('pdfbuttons');
+  var misc = document.getElementById('misc');
+  misc.hidden = true;
 
   
   main.hidden = true;
-  avisos.hidden = true;
+  avisos.hidden = false;
   doc1.hidden = false;
-  pdfbuttons.hidden = false;
+  pdfbuttons.hidden = true;
 
   url = url2;
   
@@ -156,4 +164,164 @@ function pdf2(){
   // Button Events
   document.querySelector('#prev-page').addEventListener('click', showPrevPage);
   document.querySelector('#next-page').addEventListener('click', showNextPage);
+}
+function pdf3(){
+  var main = document.getElementById('mainpage');
+  var doc1 = document.getElementById('render1');
+  var avisos = document.getElementById('avisos');
+  var pdfbuttons = document.getElementById('pdfbuttons');
+  var misc = document.getElementById('misc');
+  misc.hidden = true;
+
+  
+  main.hidden = true;
+  avisos.hidden = false;
+  doc1.hidden = false;
+  pdfbuttons.hidden = true;
+
+  url = url3;
+  
+  // Get Document
+  pdfjsLib
+  .getDocument(url)
+  .promise.then(pdfDoc_ => {
+    pdfDoc = pdfDoc_;
+
+    document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+    renderPage(pageNum);
+  })
+  .catch(err => {
+    // Display error
+    const div = document.createElement('div');
+    div.className = 'error';
+    div.appendChild(document.createTextNode(err.message));
+    document.querySelector('body').insertBefore(div, canvas);
+    // Remove top bar
+    document.querySelector('.top-bar').style.display = 'none';
+  });
+
+  // Button Events
+  document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+  document.querySelector('#next-page').addEventListener('click', showNextPage);
+}
+function pdf4(){
+  var main = document.getElementById('mainpage');
+  var doc1 = document.getElementById('render1');
+  var avisos = document.getElementById('avisos');
+  var pdfbuttons = document.getElementById('pdfbuttons');
+  var misc = document.getElementById('misc');
+  misc.hidden = true;
+
+  
+  main.hidden = true;
+  avisos.hidden = false;
+  doc1.hidden = false;
+  pdfbuttons.hidden = false;
+
+  url = url4;
+  
+  // Get Document
+  pdfjsLib
+  .getDocument(url)
+  .promise.then(pdfDoc_ => {
+    pdfDoc = pdfDoc_;
+
+    document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+    renderPage(pageNum);
+  })
+  .catch(err => {
+    // Display error
+    const div = document.createElement('div');
+    div.className = 'error';
+    div.appendChild(document.createTextNode(err.message));
+    document.querySelector('body').insertBefore(div, canvas);
+    // Remove top bar
+    document.querySelector('.top-bar').style.display = 'none';
+  });
+
+  // Button Events
+  document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+  document.querySelector('#next-page').addEventListener('click', showNextPage);
+}
+function miscshow(){
+  var main = document.getElementById('mainpage');
+  var doc1 = document.getElementById('render1');
+  var avisos = document.getElementById('avisos');
+  var misc = document.getElementById('misc');
+  misc.hidden = false;
+  
+  main.hidden = true;
+  avisos.hidden = false;
+  doc1.hidden = true;
+  
+
+}
+function pdfmisc(){
+  var selection = document.getElementById("selector").value;
+  var doc1 = document.getElementById('render1');
+
+  switch(selection){
+    case "def":
+      doc1.hidden = true;
+      break
+    case "1":
+      doc1.hidden = false;
+      url = url5;
+      // Get Document
+      pdfjsLib
+      .getDocument(url)
+      .promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+      })
+      .catch(err => {
+        // Display error
+        const div = document.createElement('div');
+        div.className = 'error';
+        div.appendChild(document.createTextNode(err.message));
+        document.querySelector('body').insertBefore(div, canvas);
+        // Remove top bar
+        document.querySelector('.top-bar').style.display = 'none';
+      });
+
+      // Button Events
+      document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+      document.querySelector('#next-page').addEventListener('click', showNextPage);
+      break
+    case "2":
+      doc1.hidden = false;
+      url = url6
+      // Get Document
+      pdfjsLib
+      .getDocument(url)
+      .promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+      })
+      .catch(err => {
+        // Display error
+        const div = document.createElement('div');
+        div.className = 'error';
+        div.appendChild(document.createTextNode(err.message));
+        document.querySelector('body').insertBefore(div, canvas);
+        // Remove top bar
+        document.querySelector('.top-bar').style.display = 'none';
+      });
+
+      // Button Events
+      document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+      document.querySelector('#next-page').addEventListener('click', showNextPage);
+      url = url6;
+      break
+  }
+
+  
 }

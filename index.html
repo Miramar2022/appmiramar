@@ -15,42 +15,55 @@
   </head>
   <body>
     <div class="top-bar">
-      <div class="logo">[Logo]</div>
-      <button class="main" onclick="mainshow()">Pagina principal</button>
+      <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
       <div id="avisos">
-        <button class="boton" onclick="pdf1()">Aviso 1</button>
-        <button class="boton" onclick="pdf2()">Aviso 2</button>
+        <button class="boton" onclick="pdf1()">Horario General</button>
+        <button class="boton" onclick="pdf2()">Horario Niños/Adolescentes</button>
+        <button class="boton" onclick="pdf3()">Objetos perdidos</button>
+        <button class="boton" onclick="pdf4()">FAQ</button>
+        <button class="boton" onclick="miscshow()">Anuncios varios</button>
       </div>
-      <div id="pdfbuttons" hidden>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="body" id="mainpage">
+      <h1>Bienvenido a la app para los avisos de la conferencia</h1>
+      <div>
+        <img src="img/4.png">
+      </div>
+      <br>    
+    </div>
+    <div class="body" id="misc" hidden>
+      <h1>Seleccione el aviso a mostrar</h1>
+      <select onchange="pdfmisc()" id="selector">
+        <option value="def">seleccionar</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+    <!--No hay un uso practico en tener ambas divs pero si remuevo una se rompe el codigo-->
+    <center>
+    <div id="render1" hidden>
+      <div id="pdfbuttons">
         <button class="boton" id="prev-page">
           <i class="fas fa-arrow-circle-left"></i> Prev Page
         </button>
         <button class="boton" id="next-page">
           Next Page <i class="fas fa-arrow-circle-right"></i>
         </button>
+      </div>  
+      <div id="pageinfo">
         <span class="page-info" id="pinfo">
           Página <span id="page-num"></span> de <span id="page-count"></span>
         </span>
       </div>
-    </div>
-    <br>
-    <br>
-    <div class="body" id="mainpage">
-      <h1>Bienvenido a la app para los avisos de la conferencia</h1>
-      <div>
-        <img>
-        <h1>[IMAGEN AQUI]</h1>
-      </div>
-      <br>
-      <p>Por este medio se estaran subiendo los avisos para la conferencia</p>
-    </div>
-    <!--No hay un uso practico en tener ambas divs pero si remuevo una se rompe el codigo-->
-    <div id="render1" hidden>
-      <canvas id="pdf-render"></canvas>
+      <canvas class="body" id="pdf-render"></canvas>
     </div>
     <div id="render2" hidden>
       <canvas id="pdf-render"></canvas>
     </div>
+    </center>
     <!--no tocar-->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="js/main.js"></script>

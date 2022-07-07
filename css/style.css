@@ -10,7 +10,7 @@ body{
 
 
 
-div.body{
+.body{
   background-color: #FFFFFF;
   margin:auto;
   width: 90%;
@@ -34,7 +34,7 @@ div.body{
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0px;
   text-decoration: none;
   font-size: 17px;
   border: none;
@@ -59,6 +59,7 @@ div.body{
   text-decoration: none;
   font-size: 17px;
   border: none;
+  width: 60.78 px;
 }
 
 .boton:hover{
@@ -75,4 +76,8 @@ div.body{
   background: orangered;
   color: #fff;
   padding: 1rem;
+}
+
+img.logo{
+  float: left;
 }
