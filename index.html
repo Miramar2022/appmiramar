@@ -11,41 +11,33 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/thumbnail.jpeg">
     <title id="title">Miramar 2022</title>
   </head>
   <body>
-    <!--<div class="top-bar" id="tbdesk">
-      <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
-      <div id="avisos">
-        <button class="boton" onclick="pdf1()">Horario General</button>
-        <button class="boton" onclick="pdf2()">Horario Niños/Adolescentes</button>
-        <button class="boton" onclick="pdf3()">Objetos perdidos</button>
-        <button class="boton" onclick="pdf4()">FAQ</button>
-        <button class="boton" onclick="miscshow()">Anuncios varios</button>
-      </div>-->
     </div>
-    <div class="top-bar" id="tbmob">
+    <div class="top-bar" id="tbmob"> <!--matchear el color con el del logo de la conferencia-->
       <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
       <select onchange="pdfmob()" id="selector1" class="boton">
-        <option value="def">ninguno</option>
+        <option value="def">--Seleccione una opcion--</option> <!--probably to delete-->
         <option value="1">Horario General</option>
         <option value="2">Horario Niños y Adolescentes</option>
         <option value="3">Objetos perdidos</option>
         <option value="4">FAQ</option>
-        <option value="5">Avisos varios</option>
+        <option value="5">Avisos</option> <!--renombrado-->
+        <option value="6">Recursos varios</option> <!--misc2.0-->
       </select>
     </div>
     </div>
     <div class="body" id="misc" hidden>
       <h1>Seleccione el aviso a mostrar</h1>
-      <select onchange="pdfmisc()" id="selector">
-        <option value="def">seleccionar</option>
+      <select onchange="pdfmisc()" id="selector" class="boton">
+        <option value="def">--Seleccione una opcion--</option>
         <option value="1">1</option>
         <option value="2">2</option>
       </select>
     </div>
     <div class="body" id="mainpage">
-      <h1>Bienvenido a la app para los avisos de la conferencia</h1>
       <div>
         <img src="img/4.png" width="88%">
       </div>
@@ -55,10 +47,10 @@
     <div id="render1" hidden>
       <div id="pdfbuttons">
         <button class="boton" id="prev-page">
-          <i class="fas fa-arrow-circle-left"></i> Prev Page
+          <i class="fas fa-arrow-circle-left"></i> Página anterior
         </button>
         <button class="boton" id="next-page">
-          Next Page <i class="fas fa-arrow-circle-right"></i>
+          Página siguiente <i class="fas fa-arrow-circle-right"></i>
         </button>
       </div>  
       <div id="pageinfo">

@@ -3,21 +3,7 @@
   padding: 0;
 }
 
-body{
-  margin:0;
-  background-color: #2B2A33;
-}
 
-
-
-.body{
-  background-color: #FFFFFF;
-  margin:auto;
-  width: 90%;
-  height: fit-content;
-  border: 5px solid #2B2A33;
-  padding: 10px
-}
 
 .logo{
   float: left;
@@ -29,7 +15,7 @@ body{
 }
 
 .main{
-  background-color: #0153A5;
+  background-color: #2E9D64;
   color: white;
   float: left;
   color: #f2f2f2;
@@ -42,7 +28,7 @@ body{
 
 
 .top-bar {
-  background-color: #333;
+  background-color: #2E9D64;
   overflow: hidden;
   height: fit-content;
   top: 0;
@@ -51,7 +37,7 @@ body{
 
 .boton{
   float: left;
-  background-color: #333;
+  background-color: #2E9D64;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -59,11 +45,6 @@ body{
   font-size: 17px;
   border: none;
   width: 60.78 px;
-}
-
-.boton:hover{
-  background-color: #0153A5;
-  color: white;
 }
 
 .page-info {
