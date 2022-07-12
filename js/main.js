@@ -9,6 +9,7 @@ var main = document.getElementById('mainpage');
 var doc1 = document.getElementById('render1');
 var pdfbuttons = document.getElementById('pdfbuttons');
 var misc = document.getElementById('misc');
+var resvar = document.getElementById("resvar");
 
 //const isMobile = navigator.userAgentData.mobile; //resolves true/false
 
@@ -85,6 +86,7 @@ function mainshow(){
   doc1.hidden = true;
   pdfbuttons.hidden = true;
   misc.hidden = true;
+  resvar.hidden = true;
 }
 function pdf1(){
   
@@ -92,6 +94,7 @@ function pdf1(){
   doc1.hidden = false;
   pdfbuttons.hidden = true;
   misc.hidden = true;
+  resvar.hidden = true;
   url = url1;
   
   // Get Document
@@ -124,6 +127,7 @@ function pdf2(){
   misc.hidden = true;
   doc1.hidden = false;
   pdfbuttons.hidden = true;
+  resvar.hidden = true;
 
   url = url2;
   
@@ -153,8 +157,7 @@ function pdf2(){
 }
 function pdf3(){
   misc.hidden = true;
-
-  
+  resvar.hidden = true;
   main.hidden = true;
   doc1.hidden = false;
   pdfbuttons.hidden = true;
@@ -187,8 +190,7 @@ function pdf3(){
 }
 function pdf4(){
   misc.hidden = true;
-
-  
+  resvar.hidden = true;
   main.hidden = true;
   doc1.hidden = false;
   pdfbuttons.hidden = false;
@@ -221,6 +223,7 @@ function pdf4(){
 }
 function miscshow(){
   misc.hidden = false;
+  resvar.hidden = true;
   
   main.hidden = true;
   doc1.hidden = true;
@@ -236,6 +239,7 @@ function pdfmisc(){
       doc1.hidden = true;
       break
     case "1":
+      pdfbuttons.hidden = false;
       doc1.hidden = false;
       url = url5;
       // Get Document
@@ -263,6 +267,7 @@ function pdfmisc(){
       document.querySelector('#next-page').addEventListener('click', showNextPage);
       break
     case "2":
+      pdfbuttons.hidden = false;
       doc1.hidden = false;
       url = url6
       // Get Document
@@ -315,6 +320,12 @@ function pdfmob(){
       break
     case "5":
       miscshow()
+      break
+    case "6":
+      misc.hidden = true;
+      resvar.hidden = false;
+      main.hidden = true;
+      doc1.hidden = true;
       break
   }
 

@@ -17,7 +17,6 @@
     <title id="title">Miramar 2022</title>
   </head>
   <body>
-    </div>
     <div class="top-bar" id="tbmob"> <!--matchear el color con el del logo de la conferencia-->
       <button class="main" onclick="mainshow()"><img class="logo" src="img/7.png" width="25 px"></button>
       <select onchange="pdfmob()" id="selector1" class="boton">
@@ -30,10 +29,15 @@
         <option value="6">Recursos varios</option> <!--misc2.0-->
       </select>
     </div>
-    </div>
-    <div class="body" id="misc" hidden>
-      <h1>Seleccione el aviso a mostrar</h1>
+    <div class="body" id="misc" hidden>      
       <select onchange="pdfmisc()" id="selector" class="boton">
+        <option value="def">--Seleccione una opcion--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+    <div class="body" id="resvar" hidden>      
+      <select onchange="resvar()" id="selector2" class="boton">
         <option value="def">--Seleccione una opcion--</option>
         <option value="1">1</option>
         <option value="2">2</option>
