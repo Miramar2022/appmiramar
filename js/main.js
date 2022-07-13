@@ -240,11 +240,12 @@ function pdfmisc(){
 
   switch(selection){
     case "def":
-      doc1.hidden = true;
+      surv.hidden;
+      d1.hidden;
       break
     case "1":
       surv.hidden = false;
-      d1.hidden = true
+      d1.hidden = true;
       break
     case "2":
       d1.hidden = false;
