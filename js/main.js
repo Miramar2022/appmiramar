@@ -2,8 +2,9 @@ const url1 = 'docs/Horario General.pdf';
 const url2 = 'docs/Horario Act Niños y Adolescentes.pdf';
 const url3 = 'docs/Listado de Objetos perdidos.pdf';
 const url4 = 'docs/Preguntas Frecuentes - Miramar 2022.pdf'
-const url5 = 'docs/pdf.pdf';
-const url6 = 'docs/F1008B Examen conocimientos.pdf'
+const url5 = 'docs/';
+const url6 = 'docs/'
+const url7 = 'docs/Mapa hotel.pdf'
 
 var main = document.getElementById('mainpage');
 var doc1 = document.getElementById('render1');
@@ -88,6 +89,7 @@ function mainshow(){
   misc.hidden = true;
   resvar.hidden = true;
 }
+
 function pdf1(){
   
   main.hidden = true;
@@ -298,6 +300,38 @@ function pdfmisc(){
   }
 
   
+}
+function res(){
+  var selec = document.getElementById("selector2").value;
+  switch(selec){
+    case "1":
+      doc1.hidden = false;
+      url = url7;
+      // Get Document
+      pdfjsLib
+      .getDocument(url)
+      .promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+      })
+      .catch(err => {
+        // Display error
+        const div = document.createElement('div');
+        div.className = 'error';
+        div.appendChild(document.createTextNode(err.message));
+        document.querySelector('body').insertBefore(div, canvas);
+        // Remove top bar
+        document.querySelector('.top-bar').style.display = 'none';
+      });
+
+      // Button Events
+      document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+      document.querySelector('#next-page').addEventListener('click', showNextPage);
+      break
+  }
 }
 function pdfmob(){
   var selection = document.getElementById("selector1").value;
