@@ -235,67 +235,20 @@ function miscshow(){
 function pdfmisc(){
   var selection = document.getElementById("selector").value;
   var doc1 = document.getElementById('render1');
+  var surv = document.getElementById('surv');
+  var d1 = document.getElementById('d1');
 
   switch(selection){
     case "def":
       doc1.hidden = true;
       break
     case "1":
-      pdfbuttons.hidden = false;
-      doc1.hidden = false;
-      url = url5;
-      // Get Document
-      pdfjsLib
-      .getDocument(url)
-      .promise.then(pdfDoc_ => {
-        pdfDoc = pdfDoc_;
-
-        document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-        renderPage(pageNum);
-      })
-      .catch(err => {
-        // Display error
-        const div = document.createElement('div');
-        div.className = 'error';
-        div.appendChild(document.createTextNode(err.message));
-        document.querySelector('body').insertBefore(div, canvas);
-        // Remove top bar
-        document.querySelector('.top-bar').style.display = 'none';
-      });
-
-      // Button Events
-      document.querySelector('#prev-page').addEventListener('click', showPrevPage);
-      document.querySelector('#next-page').addEventListener('click', showNextPage);
+      surv.hidden = false;
+      d1.hidden = true
       break
     case "2":
-      pdfbuttons.hidden = false;
-      doc1.hidden = false;
-      url = url6
-      // Get Document
-      pdfjsLib
-      .getDocument(url)
-      .promise.then(pdfDoc_ => {
-        pdfDoc = pdfDoc_;
-
-        document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-        renderPage(pageNum);
-      })
-      .catch(err => {
-        // Display error
-        const div = document.createElement('div');
-        div.className = 'error';
-        div.appendChild(document.createTextNode(err.message));
-        document.querySelector('body').insertBefore(div, canvas);
-        // Remove top bar
-        document.querySelector('.top-bar').style.display = 'none';
-      });
-
-      // Button Events
-      document.querySelector('#prev-page').addEventListener('click', showPrevPage);
-      document.querySelector('#next-page').addEventListener('click', showNextPage);
-      url = url6;
+      d1.hidden = false;
+      surv.hidden = true;
       break
   }
 
