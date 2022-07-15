@@ -249,15 +249,31 @@ function pdfmob(){
     case "def":
       break
     case "1":
+      misc.hidden = true;
+      resvar.hidden = true;
+      main.hidden = true;
+      doc1.hidden = false;
       pdf(1)
       break
     case "2":
+      misc.hidden = true;
+      resvar.hidden = true;
+      main.hidden = true;
+      doc1.hidden = false;
       pdf(2)
       break
     case "3":
+      misc.hidden = true;
+      resvar.hidden = true;
+      main.hidden = true;
+      doc1.hidden = false;
       pdf(3)
       break
     case "4":
+      misc.hidden = true;
+      resvar.hidden = true;
+      main.hidden = true;
+      doc1.hidden = false;
       pdf(4)
       break
     case "5":
@@ -270,6 +286,10 @@ function pdfmob(){
       doc1.hidden = true;
       break
     case "7":
+      misc.hidden = true;
+      resvar.hidden = true;
+      main.hidden = true;
+      doc1.hidden = false;
       pdf()
   }
 
