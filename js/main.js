@@ -1,6 +1,6 @@
 const url1 = 'docs/Horario General.pdf';
-const url2 = 'docs/Horario Act Niños y Adolescentes.pdf';
-const url3 = 'docs/Listado de Objetos perdidos.pdf';
+const url2 = 'docs/lonasninos_verticlaes_contigo2022.pdf';
+const url3 = 'docs/Lost and Found - Miramar 22.pdf';
 const url4 = 'docs/Preguntas Frecuentes - Miramar 2022.pdf'
 const url5 = 'docs/';
 const url6 = 'docs/'
@@ -90,114 +90,33 @@ function mainshow(){
   resvar.hidden = true;
 }
 
-function pdf1(){
-  
-  main.hidden = true;
-  doc1.hidden = false;
-  pdfbuttons.hidden = true;
-  misc.hidden = true;
-  resvar.hidden = true;
-  url = url1;
-  
-  // Get Document
-  pdfjsLib
-  .getDocument(url)
-  .promise.then(pdfDoc_ => {
-    pdfDoc = pdfDoc_;
-
-    document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-    renderPage(pageNum);
-  })
-  .catch(err => {
-    // Display error
-    const div = document.createElement('div');
-    div.className = 'error';
-    div.appendChild(document.createTextNode(err.message));
-    document.querySelector('body').insertBefore(div, canvas);
-    // Remove top bar
-    document.querySelector('.top-bar').style.display = 'none';
-  });
-
-  // Button Events
-  document.querySelector('#prev-page').addEventListener('click', showPrevPage);
-  document.querySelector('#next-page').addEventListener('click', showNextPage);
-}
-
-function pdf2(){
-  main.hidden = true;
-  misc.hidden = true;
-  doc1.hidden = false;
-  pdfbuttons.hidden = true;
-  resvar.hidden = true;
-
-  url = url2;
-  
-  // Get Document
-  pdfjsLib
-  .getDocument(url)
-  .promise.then(pdfDoc_ => {
-    pdfDoc = pdfDoc_;
-
-    document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-    renderPage(pageNum);
-  })
-  .catch(err => {
-    // Display error
-    const div = document.createElement('div');
-    div.className = 'error';
-    div.appendChild(document.createTextNode(err.message));
-    document.querySelector('body').insertBefore(div, canvas);
-    // Remove top bar
-    document.querySelector('.top-bar').style.display = 'none';
-  });
-
-  // Button Events
-  document.querySelector('#prev-page').addEventListener('click', showPrevPage);
-  document.querySelector('#next-page').addEventListener('click', showNextPage);
-}
-function pdf3(){
-  misc.hidden = true;
-  resvar.hidden = true;
-  main.hidden = true;
-  doc1.hidden = false;
-  pdfbuttons.hidden = true;
-
-  url = url3;
-  
-  // Get Document
-  pdfjsLib
-  .getDocument(url)
-  .promise.then(pdfDoc_ => {
-    pdfDoc = pdfDoc_;
-
-    document.querySelector('#page-count').textContent = pdfDoc.numPages;
-
-    renderPage(pageNum);
-  })
-  .catch(err => {
-    // Display error
-    const div = document.createElement('div');
-    div.className = 'error';
-    div.appendChild(document.createTextNode(err.message));
-    document.querySelector('body').insertBefore(div, canvas);
-    // Remove top bar
-    document.querySelector('.top-bar').style.display = 'none';
-  });
-
-  // Button Events
-  document.querySelector('#prev-page').addEventListener('click', showPrevPage);
-  document.querySelector('#next-page').addEventListener('click', showNextPage);
-}
-function pdf4(){
-  misc.hidden = true;
-  resvar.hidden = true;
+function pdf(num){
   main.hidden = true;
   doc1.hidden = false;
   pdfbuttons.hidden = false;
-
-  url = url4;
+  switch(num){
+    case 1:
+      url = url1;
+      break
+    case 2:
+      url = url2;
+      break
+    case 3:
+      url = url3;
+      break
+    case 4:
+      url = url4;
+      break
+    case 5:
+      url = url5;
+      break
+    case 6:
+      url = url6;
+      break
+    case 7:
+      url = url7;
+      break
+  }
   
   // Get Document
   pdfjsLib
@@ -237,19 +156,53 @@ function pdfmisc(){
   var doc1 = document.getElementById('render1');
   var surv = document.getElementById('surv');
   var d1 = document.getElementById('d1');
+  var d2 = document.getElementById('d2');
+  var d3 = document.getElementById('d3');
+  var d4 = document.getElementById('day4');
 
   switch(selection){
     case "def":
       surv.hidden;
       d1.hidden;
+      d2.hidden;
+      d3.hidden;
+      d4.hidden;
       break
     case "1":
       surv.hidden = false;
       d1.hidden = true;
+      d2.hidden = true;
+      d3.hidden = true;
+      d4.hidden = true;
       break
     case "2":
-      d1.hidden = false;
       surv.hidden = true;
+      d1.hidden = false;
+      d2.hidden = true;
+      d3.hidden = true;
+      d4.hidden = true;
+      break
+    case "3":
+      surv.hidden = true;
+      d1.hidden = true;
+      d2.hidden = false;
+      d3.hidden = true;
+      d4.hidden = true;
+      break
+    case "4":
+      surv.hidden = true;
+      d1.hidden = true;
+      d1.hidden = true;
+      d2.hidden = true;
+      d3.hidden = false;
+      d4.hidden = true;
+      break
+    case "5":
+      surv.hidden = true;
+      d1.hidden = true;
+      d2.hidden = true;
+      d3.hidden = true;
+      d4.hiden = false;
       break
   }
 
@@ -260,6 +213,7 @@ function res(){
   switch(selec){
     case "1":
       doc1.hidden = false;
+      /*
       url = url7;
       // Get Document
       pdfjsLib
@@ -284,6 +238,8 @@ function res(){
       // Button Events
       document.querySelector('#prev-page').addEventListener('click', showPrevPage);
       document.querySelector('#next-page').addEventListener('click', showNextPage);
+      */
+      pdf(7)
       break
   }
 }
@@ -291,20 +247,18 @@ function pdfmob(){
   var selection = document.getElementById("selector1").value;
   switch(selection){
     case "def":
-      doc1.hidden = true
-      main.hidden = false
       break
     case "1":
-      pdf1()
+      pdf(1)
       break
     case "2":
-      pdf2()
+      pdf(2)
       break
     case "3":
-      pdf3()
+      pdf(3)
       break
     case "4":
-      pdf4()
+      pdf(4)
       break
     case "5":
       miscshow()
@@ -315,6 +269,8 @@ function pdfmob(){
       main.hidden = true;
       doc1.hidden = true;
       break
+    case "7":
+      pdf()
   }
 
   
