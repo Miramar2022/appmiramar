@@ -1,10 +1,10 @@
 const url1 = 'docs/Horario General.pdf';
-const url2 = 'docs/lonasninos_verticlaes_contigo2022.pdf';
+const url2 = 'docs/carta_horarioninos_contigo2022.pdf';
 const url3 = 'docs/Lost and Found - Miramar 22.pdf';
 const url4 = 'docs/Preguntas Frecuentes - Miramar 2022.pdf'
 const url5 = 'docs/';
 const url6 = 'docs/'
-const url7 = 'docs/Mapa hotel.pdf'
+const url7 = 'docs/carta_mapa_contigo2022.pdf'
 
 var main = document.getElementById('mainpage');
 var doc1 = document.getElementById('render1');
@@ -197,7 +197,7 @@ function pdfmisc(){
       d3.hidden = false;
       d4.hidden = true;
       break
-    case "5":
+    case 5:
       surv.hidden = true;
       d1.hidden = true;
       d2.hidden = true;
