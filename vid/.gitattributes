@@ -1,8 +1,0 @@
-. filter=lfs diff=lfs merge=lfs -text
-.mp4 filter=lfs diff=lfs merge=lfs -text
-PresentacionDia02_1920x1080_1.mp4 filter=lfs diff=lfs merge=lfs -text
-PresentacionDia03_1920x1080_1.mp4 filter=lfs diff=lfs merge=lfs -text
-PresentacionDia04_1920x1080_1.mp4 filter=lfs diff=lfs merge=lfs -text
-Bienvenida.mp4 filter=lfs diff=lfs merge=lfs -text
-Dia1.mp4 filter=lfs diff=lfs merge=lfs -text
-Guía[[:space:]]de[[:space:]]sobrevivencia[[:space:]]Miramar[[:space:]]2022.mp4 filter=lfs diff=lfs merge=lfs -text
