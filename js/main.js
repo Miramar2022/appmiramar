@@ -1,8 +1,8 @@
-const url1 = 'docs/Horario General.pdf';
+const url1 = 'docs/Horario Conferencia (Jovenes).pdf';
 const url2 = 'docs/carta_horarioninos_contigo2022.pdf';
 const url3 = 'docs/Lost and Found - Miramar 22.pdf';
-const url4 = 'docs/Preguntas Frecuentes - Miramar 2022.pdf'
-const url5 = 'docs/';
+const url4 = ''
+const url5 = 'docs/Horario Familias.pdf';
 const url6 = 'docs/'
 const url7 = 'docs/carta_mapa_contigo2022.pdf'
 
@@ -269,13 +269,13 @@ function pdfmob(){
       doc1.hidden = false;
       pdf(3)
       break
-    case "4":
+    /*case "4":
       misc.hidden = true;
       resvar.hidden = true;
       main.hidden = true;
       doc1.hidden = false;
       pdf(4)
-      break
+      break*/
     case "5":
       miscshow()
       break
@@ -290,7 +290,7 @@ function pdfmob(){
       resvar.hidden = true;
       main.hidden = true;
       doc1.hidden = false;
-      pdf()
+      pdf(5)
   }
 
   
