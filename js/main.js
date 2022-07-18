@@ -1,7 +1,7 @@
 const url1 = 'docs/Horario Conferencia (Jovenes).pdf';
 const url2 = 'docs/carta_horarioninos_contigo2022.pdf';
 const url3 = 'docs/Lost and Found - Miramar 22.pdf';
-const url4 = ''
+const url4 = 'docs/DISTRIBUCIÓN DE COMEDOR.pdf'
 const url5 = 'docs/Horario Familias.pdf';
 const url6 = 'docs/'
 const url7 = 'docs/carta_mapa_contigo2022.pdf'
@@ -240,6 +240,9 @@ function res(){
       document.querySelector('#next-page').addEventListener('click', showNextPage);
       */
       pdf(7)
+      break
+    case "2":
+      pdf(4);
       break
   }
 }
